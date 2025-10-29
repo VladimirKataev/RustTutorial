@@ -1,2 +1,2 @@
 # RustTutorial
-Learning Rust
+Learning Rust, Following the official book.

@@ -5,10 +5,10 @@ use std::cmp::Ordering;
 fn main() {
 
     let secret = rand::thread_rng().gen_range(1..=100);
-    println!("Guess the number (Not {}):", secret);
 
 
     loop{
+        println!("Guess the number :");
         let mut guess = String::new(); // mutable string
         io::stdin()
             .read_line(&mut guess) // read into a mutable reference
@@ -18,7 +18,7 @@ fn main() {
             Ok(num) => num,
             Err(_) => {
                 println!("invalid");
-                continue;
+                continue; // note : leaves scope of the loop and re-enters it
             },
         };
         println!("You guessed {guess}");

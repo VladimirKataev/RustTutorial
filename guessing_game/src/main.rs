@@ -27,7 +27,7 @@ fn main() {
             Ordering::Greater => println!("Too big"),
             Ordering::Equal => {
                 println!("Perfect");
-                break;
+                break; // note : leaves scope of the loop. does NOT reenter it
             },
         }
     }

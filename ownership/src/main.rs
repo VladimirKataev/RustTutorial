@@ -25,6 +25,9 @@ fn main() {
                                     // x does NOT move into the function,
                                     // so it's okay to use x afterward.
 
+    let s = String::from("hello there - Kenobi"); //need to redeclare after ownership is taken
+    println!("new S:{}", calculate_length(&s));
+
 }
 
 
@@ -36,3 +39,13 @@ fn takes_ownership(some_string: String) { // some_string comes into scope
 fn makes_copy(some_integer: i32) { // some_integer comes into scope
     println!("{some_integer}");
 } // Here, some_integer goes out of scope. Nothing special happens.
+
+fn calculate_length(s: &String) -> usize { // s is a reference to a String
+    s.len()
+} // Here, s goes out of scope. But because s does not have ownership of what
+  // it refers to, the String is not dropped.
+
+// Let’s recap what we’ve discussed about references:
+
+// At any given time, you can have either one mutable reference or any number of immutable references.
+// References must always be valid.

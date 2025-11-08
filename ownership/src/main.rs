@@ -49,3 +49,31 @@ fn calculate_length(s: &String) -> usize { // s is a reference to a String
 
 // At any given time, you can have either one mutable reference or any number of immutable references.
 // References must always be valid.
+
+
+// noobish because, if the original string changes, it goes bad
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
+}
+
+// better, because a slice would be an immutable reference
+fn better_first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..] //s is an immutable reference to a constant c-string
+    // consequently, it can't be edited while this reference exists
+}

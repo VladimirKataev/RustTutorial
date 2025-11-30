@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-fn main() {
-    println!("Hello, world!");
-}
-=======
 struct User {
     active: bool,
     username: String,
@@ -26,4 +21,3 @@ fn main() {
 
 
 }
->>>>>>> 33acb51ace384891f148acaaef4ebf7a836ed9c2

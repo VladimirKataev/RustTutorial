@@ -2,6 +2,7 @@ fn main() {
     let rect1 = rectangle{length : 50, width : 30};
     println!("Area = {}", area(&rect1));
     println!("Rect = {rect1:?}");
+    dbg!(&rect1);
 }
 #[derive(Debug)]
 struct rectangle{

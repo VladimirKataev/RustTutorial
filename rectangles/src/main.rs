@@ -1,7 +1,13 @@
 fn main() {
-    let rect1 = (30, 50);
+    let rect1 = rectangle{length : 50, width : 30};
     println!("Area = {}", area(rect1));
 }
-fn area(dimensions: (u32, u32)) -> u32 {
-    dimensions.0 * dimensions.1
+
+struct rectangle{
+    length : u32,
+    width : u32,
+}
+
+fn area(dimensions: rectangle) -> u32 {
+    dimensions.length * dimensions.width
 }

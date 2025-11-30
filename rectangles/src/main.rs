@@ -10,15 +10,22 @@ impl Rectangle{
     fn width(&self) ->bool{
         self.width > 0
     }
+    fn canHold(&self, other : &Rectangle) -> bool{
+        ((self.width > other.width) && (self.length > other.length)) ||
+        ((self.length > other.width) && (self.width > other.length)) // rotate 90deg
+
+    }
 }
 
 
 
 fn main() {
     let rect1 = Rectangle{length : 50, width : 30};
-    println!("Area = {}", rect1.area());
-    println!("Rect = {rect1:?}");
-    println!("is width above 0? {}", rect1.width());
-    dbg!(&rect1);
+    let rect2 = Rectangle{length : 60, width : 40};
+    let rect3 = Rectangle{length : 30, width : 30};
+
+    println!("Rectangles are {rect1:?}, {rect2:?}, {rect3:?}");
+    println!("Can rect1 hold rect2? {}", rect1.canHold(&rect2));
+    println!("Can rect2 hold rect1? {}", rect2.canHold(&rect1));
 }
 

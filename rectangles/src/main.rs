@@ -1,6 +1,7 @@
 fn main() {
-    println!("Area = {}", area(50, 30));
+    let rect1 = (30, 50);
+    println!("Area = {}", area(rect1));
 }
-fn area(length : i32, width : i32) -> i32 {
-    length * width
+fn area(dimensions: (u32, u32)) -> u32 {
+    dimensions.0 * dimensions.1
 }

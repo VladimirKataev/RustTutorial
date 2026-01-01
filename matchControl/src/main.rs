@@ -29,7 +29,10 @@ fn main() {
 
     let mut count = 0;
     if let Coin::Quarter(state) = coin {
-        println!("State quarter from {state:?}!");
+        match (describe_state_quarter(Coin::Quarter(state))) {
+            Some(String) => println!("{}", String),
+            None => println!("Not Seen this"),
+        }
     } else {
         count += 1;
     }

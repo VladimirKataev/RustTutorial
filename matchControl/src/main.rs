@@ -10,7 +10,30 @@ fn main() {
     let none = plus_one(None);
 
 
+    let dice_roll = 9;
+
+    // match dice_roll {
+    //     3 => add_fancy_hat(),
+    //     7 => remove_fancy_hat(),
+    //     other => move_player(other),
+    // }
+
+    // Alternatively, if we don't care about other's value
+    match dice_roll {
+        3 => add_fancy_hat(),
+        7 => remove_fancy_hat(),
+        _ => (), // for a do-nothing operation
+    }
+
+
 }
+
+
+
+fn add_fancy_hat() {}
+fn remove_fancy_hat() {}
+fn move_player(num_spaces: u8) {}
+
 
 #[derive(Debug)] // so we can inspect the state in a minute
 enum UsState {

@@ -4,6 +4,12 @@ fn main() {
     let money = Coin::Quarter(UsState::Alaska);
     let value = value_in_cents(money);
     println!("{value}");
+
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+
+
 }
 
 #[derive(Debug)] // so we can inspect the state in a minute
@@ -18,6 +24,13 @@ enum Coin {
     Nickel,
     Dime,
     Quarter(UsState), // can have arguments in enum types
+}
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1),
+    }
 }
 
 

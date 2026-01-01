@@ -26,12 +26,20 @@ enum Coin {
     Quarter(UsState), // can have arguments in enum types
 }
 
+// This version WILL COMPILE
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
         None => None,
         Some(i) => Some(i + 1),
     }
 }
+
+// This version WILL NOT COMPILE
+// fn plus_one(x: Option<i32>) -> Option<i32> {
+//     match x { // This match MUST BE EXHAUSTIVE
+//         Some(i) => Some(i + 1),
+//     }
+// }
 
 
 fn value_in_cents(coin: Coin) -> u8 {

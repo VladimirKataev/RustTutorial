@@ -14,10 +14,12 @@ fn main() {
             .expect("Failed to read line"); // read_line returns result, which 
                                             // might be of enum Error. 
                                             // If it is, panic!
-        let guess : u32 = guess
-                            .trim()
-                            .parse()
-                            .expect("Please type a number");
+
+        let guess : u32 = 
+            match guess.trim().parse(){
+                Ok(num) => num,
+                Err(_) => continue, //jump back to start of loop
+            };
         println!("You guessed: {guess}");
 
         match guess.cmp(&sercret_number){

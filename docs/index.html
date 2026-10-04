@@ -9,13 +9,28 @@
             <li><code>rustc = g++</code></li>
             <li><dl>
                 <dt><code>cargo</code> is for conveniently building projects</dt>
-                <dd>- <code>cargo new</code> makes a new project</dt>
-                <dd>-<code> cargo check</code> for code validity</dd>
-                <dd>-<code> cargo build</code> to build debuggable version into <code>target/debug/projectname</code></dd>
-                <dd>-<code> cargo build --release</code> to build release (no-debug and optimized) version into <code>target/release/projectname</code></dd>
+                <dd>-<code>cargo new</code> makes a new project</dd>
+                <dd>-<code>cargo check</code> for code validity</dd>
+                <dd>-<code>cargo build</code> to build debuggable version into <code>target/debug/projectname</code></dd>
+                <dd>-<code>cargo build --release</code> to build release (no-debug and optimized) version into <code>target/release/projectname</code></dd>
+                <dd>-<code>Cargo.lock</code> and <code>Cargo.toml</code> should BOTH be in git version control. <code>Cargo.lock</code> caches version at time of first pull</dd>
+                <dd>-<code>cargo update</code> ignores and recomputes <code>Cargo.lock</code> and associated versions</dd>
+                <dd>-<code>cargo doc --open</code> builds documentation locally and opens a browser with associated documentation.</dd>
                 </dl>
                 </li>
+            <li><dl>
+                <dt>Rust works off <code>Option</code> and <code>Result</code></dt>
+                <dd>-<code>Result&lt;T&gt;</code> can be of enum T with the correct value, or as enum Error </dd>
+                <dd>-<code>Option&lt;T&gt;</code> can be of enum T with the correct value, or as enum None </dd>
+                </dl></li>
         </ul>
         <h2>Questions</h2>
+        <ul>
+            <li> <code>crates.io</code> is the site used for package management. Who hosts it, how secure, and any alternatives?</li>
+            <li><dl><dt><code>cargo doc --open</code> is awesome, but there are questions</dt>
+                <dd>-What is the c++ equivalent?</dd>
+                <dd>-How to write this documentation?</dd>
+                </dl></li>
+        </ul>
     </body>
 </html>

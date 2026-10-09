@@ -24,6 +24,15 @@
                 <dd>-<code>Option&lt;T&gt;</code> can be of enum T with the correct value, or as enum None </dd>
                 <dd>-These should be matched, or you can use <code>.expect("message here")</code> to say "it's fine" and a panic will show you "message here" </dd>
                 </dl></li>
+            <li><dl>
+                <dt>Rust types are funky</dt>
+                <dd>-<code>char</code> is of size 4 bytes, which is comically large</dd>
+                <dd>-<code>u8</code> exists at least</dd>
+                <dd>-Tuples are typed as <code>(i32, f64, u8)</code></dd>
+                <dd>-<code>array</code> size has to be known at COMPILE time</dd>
+                <dd>-<code>array[index]</code> when out of bounds CAN PANIC</dd>
+                <dd>-Release-compiled programs will just over/under flow depending on size</dd>
+                </dl></li>
         </ul>
         <h2>Questions</h2>
         <ul>
